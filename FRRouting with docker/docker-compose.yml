@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+  frr1:
+    image: d19bacb84eae 
+    container_name: rafael
+    network_mode: pontes
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "2203:179"
+    hostname: frrrafael
+
+  fr2:
+    image: d19bacb84eae 
+    container_name: miguel
+    network_mode: pontes
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "2204:179"
+    hostname: frrmiguel
+  
+  frr3:
+   image: d19bacb84eae 
+   container_name: luna
+   network_mode: caval
+   privileged: true
+   restart: unless-stopped
+   ports:
+     - "2205:179"
+   hostname: frrluna
